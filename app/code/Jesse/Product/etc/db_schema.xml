@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="jesse_product" resource="default" engine="innodb" comment="JesseProduct">
+        <column xsi:type="int" name="jesse_product_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Jesse Product Id Column"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name Column"/>
+        <column xsi:type="decimal" name="weight" precision="20" scale="2" unsigned="true" nullable="false"
+                comment="Weight Column"/>
+        <column xsi:type="int" name="quantity" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Quantity Column"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Description Column"/>
+       <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="jesse_product_id"/>
+        </constraint>
+        <index referenceId="JESSE_PRODUCT_JESSE_PRODUCT_ID" indexType="btree">
+            <column name="jesse_product_id"/>
+        </index>
+    </table>
+</schema>

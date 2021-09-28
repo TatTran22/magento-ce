@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Jesse\Product\Api\Data\JesseProductInterface" type="Jesse\Product\Model\Data\JesseProductData"/>
+    <preference for="Jesse\Product\Api\JesseProductRepositoryInterface" type="Jesse\Product\Model\JesseProductRepository"/>
+    <preference for="Jesse\Product\Api\GetJesseProductListInterface" type="Jesse\Product\Query\JesseProduct\GetListQuery"/>
+    <preference for="Jesse\Product\Api\SaveJesseProductInterface" type="Jesse\Product\Command\JesseProduct\SaveCommand"/>
+    <preference for="Jesse\Product\Api\DeleteJesseProductByIdInterface" type="Jesse\Product\Command\JesseProduct\DeleteByIdCommand"/>
+    <preference for="Jesse\Product\Api\Data\JesseProductSearchResultsInterface" type="Jesse\Product\Model\JesseProductSearchResults"/>
+
+    <virtualType name="JesseProductRepositoryDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/jesse_product_api.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="JesseProductGraphQLDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/jesse_product_graph_ql.log</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="JesseProductRepositoryLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">JP-API</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">JesseProductRepositoryDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="JesseProductGraphQLLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">JP-GraphQL</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">JesseProductGraphQLDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Jesse\Product\Model\JesseProductRepository">
+        <arguments>
+            <argument name="logger" xsi:type="object">JesseProductRepositoryLogger</argument>
+        </arguments>
+    </type>
+    <type name="Jesse\Product\Model\Resolver\JesseProduct">
+        <arguments>
+            <argument name="logger" xsi:type="object">JesseProductGraphQLLogger</argument>
+        </arguments>
+    </type>
+
+</config>

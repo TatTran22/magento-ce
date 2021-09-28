@@ -1,0 +1,19 @@
+{
+  "jesse_product": {
+    "column": {
+      "jesse_product_id": true,
+      "name": true,
+      "weight": true,
+      "quantity": true,
+      "description": true,
+      "created_at": true,
+      "updated_at": true
+    },
+    "index": {
+      "JESSE_PRODUCT_JESSE_PRODUCT_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}

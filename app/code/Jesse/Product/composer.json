@@ -1,0 +1,21 @@
+{
+  "name": "jesse/product",
+  "version": "1.0.0",
+  "description": "Jesse Product practice",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-graph-ql": "100.4.*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Jesse\\Product\\": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+type Query {
+    jesse_product_get(
+        jesse_product_id: Int! @doc(description: "Specify the id of the jesse product.")
+    ): jesseProductData @resolver( class: "Jesse\\Product\\Model\\Resolver\\JesseProduct") @doc(description: "Get jesse product data of the given id.")
+}
+
+type jesseProductData {
+    jesse_product_id: Int
+    name: String
+    weight: Float
+    quantity: Int
+    created_at: String
+    updated_at: String
+}

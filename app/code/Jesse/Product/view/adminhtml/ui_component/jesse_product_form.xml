@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">jesse_product_form.jesse_product_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Jesse Product Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <namespace>jesse_product_form</namespace>
+        <dataScope>data.general</dataScope>
+        <deps>
+            <dep>jesse_product_form.jesse_product_form_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="save" class="Jesse\Product\Block\Form\JesseProduct\Save"/>
+            <button name="back" class="Jesse\Product\Block\Form\JesseProduct\Back"/>
+            <button name="delete" class="Jesse\Product\Block\Form\JesseProduct\Delete"/>
+        </buttons>
+    </settings>
+    <dataSource name="jesse_product_form_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="jesse_product/jesseproduct/save"/>
+        </settings>
+        <dataProvider class="Jesse\Product\Ui\DataProvider\JesseProductDataProvider"
+                      name="jesse_product_form_data_source">
+            <settings>
+                <requestFieldName>jesse_product_id</requestFieldName>
+                <primaryFieldName>jesse_product_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label translate="true">General</label>
+        </settings>
+        <field name="jesse_product_id" sortOrder="0" formElement="hidden">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">jesse_product_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Entity ID</label>
+                <dataScope>jesse_product_id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="00" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">name</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="weight" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">weight</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>float</dataType>
+                <label translate="true">Weight</label>
+                <dataScope>weight</dataScope>
+            </settings>
+        </field>
+        <field name="quantity" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">quantity</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>int</dataType>
+                <label translate="true">Quantity</label>
+                <dataScope>quantity</dataScope>
+            </settings>
+        </field>
+        <field name="description" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">description</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Description</label>
+                <dataScope>description</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

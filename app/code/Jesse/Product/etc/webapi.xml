@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/jesse-product/get-list" method="GET">
+        <service class="Jesse\Product\Api\GetJesseProductListInterface" method="execute"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/jesse-product/save" method="POST">
+        <service class="Jesse\Product\Api\JesseProductRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/jesse-product/:entityId" method="DELETE">
+        <service class="Jesse\Product\Api\DeleteJesseProductByIdInterface" method="execute"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+</routes>
