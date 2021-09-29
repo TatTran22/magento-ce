@@ -3,6 +3,48 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customer_composite_update.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_to_delete.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_to_import.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_to_update.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_with_gender_to_import.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/dev/tests/integration/testsuite/Magento/ImportExport/Model/Import/Entity/_files/customers_for_validation_test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/setup/src/Magento/Setup/Fixtures/_files/dictionary.csv">
           <value>
             <Attribute>
